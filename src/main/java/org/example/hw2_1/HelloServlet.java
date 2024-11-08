@@ -1,4 +1,4 @@
-package org.example.hw21;
+package org.example.hw2_1;
 
 import java.io.*;
 import javax.servlet.http.*;
