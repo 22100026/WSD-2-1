@@ -39,7 +39,7 @@
 <body>
 <div class="container">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-        <a href="http://localhost:8080/hellojsp"
+        <a href="index.jsp"
            class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
             <svg xmlns="http://www.w3.org/2000/svg" class='icon' viewBox="0 0 448 512">
                 <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
