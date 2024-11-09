@@ -32,79 +32,6 @@
             padding-right: 5%;
         }
     </style>
-    <script>
-        function validateForm() {
-            const form = document.querySelector(".needs-validation");
-            const name = document.getElementById("name");
-            const dorm = document.getElementById("dorm");
-            const phone = document.getElementById("phone");
-            const student = document.getElementById("student");
-            const bday = document.getElementById("bday");
-            const city = document.getElementById("city");
-            const etc = document.getElementById("etc");
-
-            if (name.value.length < 2) {
-                alert("이름은 최소 2글자 이상이어야 합니다.");
-                name.focus();
-                return false;
-            }
-            if (isNaN(dorm.value)) {
-                alert("호실은 숫자만 입력할 수 있습니다.");
-                dorm.focus();
-                return false;
-            }
-            if (dorm.value.length < 1) {
-                alert("호실을 입력하시오.");
-                dorm.focus();
-                return false;
-            }
-            if (isNaN(phone.value.replace(/-/g, ''))) {
-                alert("전화번호는 숫자와 '-'만 입력할 수 있습니다.");
-                phone.focus();
-                return false;
-            }
-            if (phone.value.length < 1) {
-                alert("전화번호를 입력하시오.");
-                phone.focus();
-                return false;
-            } else if (phone.value.length !== 13) {
-                alert("유효한 전화번호를 입력하시오.")
-                phone.focus();
-                return false;
-            }
-            if (isNaN(student.value)) {
-                alert("학번은 숫자만 입력할 수 있습니다.");
-                student.focus();
-                return false;
-            }
-            if (student.value.length < 1) {
-                alert("학번을 입력하시오.");
-                student.focus();
-                return false;
-            }
-            if (bday.value.length < 1) {
-                alert("생일을 입력하시오.");
-                bday.focus();
-                return false;
-            }
-            if (city.value === "base") {
-                alert("주소를 선택하시오.");
-                city.focus();
-                return false;
-            }
-            if (etc.value.length > 50) {
-                alert("특이사항은 최대 50글자까지 입력할수 있습니다.");
-                etc.focus();
-                return false;
-            }
-
-            if (form.checkValidity()) {
-                alert("추가되었습니다");
-                window.location.href = "write_ok.jsp";
-                return false;
-            }
-        }
-    </script>
 </head>
 <body>
 <div class="container">
@@ -132,40 +59,34 @@
 <div class="container">
     <div class="row g-5">
         <div class="col-md-7 col-lg-8">
-            <h4 class="mb-3">기숙사생 추가</h4>
-            <form class="needs-validation" novalidate action="write_ok.jsp" method="POST"
-                  onsubmit="return validateForm()">
+            <h4 class="mb-3">기숙사생생 추가</h4>
+            <form class="needs-validation" action="write_ok.jsp" method="POST">
                 <div class="row g-3">
                     <div class="col-12">
                         <label for="name" class="form-label">이름</label>
                         <input type="text" class="form-control" id="name" name="name" placeholder="김한동" required>
-                        <div class="invalid-feedback">이름을 입력하시오</div>
                     </div>
 
                     <div class="col-12">
                         <label for="dorm" class="form-label">호실</label>
                         <input type="text" class="form-control" id="dorm" name="dorm" placeholder="201" required>
-                        <div class="invalid-feedback">호실을 입력하시오</div>
                     </div>
 
                     <div class="col-12">
                         <label for="phone" class="form-label">전화번호</label>
                         <input type="text" class="form-control" id="phone" name="phone" placeholder="010-xxxx-xxxx"
                                required>
-                        <div class="invalid-feedback">전화번호를 입력하시오</div>
                     </div>
 
                     <div class="col-12">
                         <label for="student" class="form-label">학번</label>
                         <input type="text" class="form-control" id="student" name="student" placeholder="22400001"
                                required>
-                        <div class="invalid-feedback">학번을 입력하시오</div>
                     </div>
 
                     <div class="col-12">
                         <label for="bday" class="form-label">생일</label>
                         <input type="date" class="form-control" id="bday" name="bday" required>
-                        <div class="invalid-feedback">생일을 입력하시오</div>
                     </div>
 
                     <div class="my-3">
@@ -196,15 +117,11 @@
                             <option>경상</option>
                             <option>광주/전라/제주</option>
                         </select>
-                        <div class="invalid-feedback">
-                            주소를 선택하시오
-                        </div>
                     </div>
 
                     <div class="col-12">
                         <label for="etc" class="form-label">특이사항<span class="text-muted">(Optional)</span></label>
                         <textarea class="form-control" id="etc" name="etc"></textarea>
-                        <div class="invalid-feedback">특이사항을 입력하시오</div>
                     </div>
 
                     <hr class="my-4">

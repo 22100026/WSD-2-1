@@ -53,10 +53,10 @@
     </style>
 
     <script>
-        function del()
-        {
-            confirm("정보를 삭제 하시겠습니까?");
-            window.location.href = "index.html";
+        function del(studentId) {
+            if (confirm("정보를 삭제 하시겠습니까?")) {
+                location.href = 'delete_ok.jsp?id=' + studentId;
+            }
         }
     </script>
 </head>
@@ -67,7 +67,7 @@
                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
                 <svg xmlns="http://www.w3.org/2000/svg" class='icon' viewBox="0 0 448 512">
                     <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                    <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
+                    <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"></path>
                 </svg>
                 <span class="fs-4">기숙사 인원 관리 시스템</span>
             </a>
@@ -92,13 +92,13 @@
             <p class="display-6 fw-bold" >홍길동</p>
             <p class="fs-5">호실 - 307호</p>
             <p class="fs-5">전화번호 - 010-oooo-oooo</p>
-            <p class="fs-5">학번 - 21900028</p>
+            <p class="fs-5" id="std_id">학번 - 21900028</p>
             <p class="fs-5">생일 - 2002.08.13</p>
             <p class="fs-5">성별 - 남성</p>
             <p class="fs-5">주소 - 인천</p>
             <p class="fs-5">특이사항 - 문신</p>
-            <button class="btn btn-primary" type="button" onclick="location.href='edit.html'">수정</button>
-            <button class="btn btn-danger" type="button" onclick="del()">삭제</button>
+            <button class="btn btn-primary" type="button" onclick="location.href='edit.jsp'">수정</button>
+            <button class="btn btn-danger" type="button" onclick="del('21900028')">삭제</button>
         </div>
     </div>
 
